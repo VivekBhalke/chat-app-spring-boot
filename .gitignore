@@ -1,34 +1,39 @@
+# Ignore the HELP.md file
 HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-./src/main/resources/application.properties
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+# Ignore all target directories
+chatApp/target/
+!chatApp/.mvn/wrapper/maven-wrapper.jar
+!chatApp/**/src/main/**/target/
+!chatApp/**/src/test/**/target/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# Ignore application.properties (Sensitive Data)
+chatApp/src/main/resources/application.properties
 
+# Ignore IDE-specific files
+chatApp/.apt_generated
+chatApp/.classpath
+chatApp/.factorypath
+chatApp/.project
+chatApp/.settings/
+chatApp/.springBeans
+chatApp/.sts4-cache
 
-### VS Code ###
-.vscode/
+# IntelliJ IDEA
+chatApp/.idea/
+chatApp/*.iws
+chatApp/*.iml
+chatApp/*.ipr
+
+# NetBeans
+chatApp/nbproject/private/
+chatApp/nbbuild/
+chatApp/dist/
+chatApp/nbdist/
+chatApp/.nb-gradle/
+chatApp/build/
+!chatApp/**/src/main/**/build/
+!chatApp/**/src/test/**/build/
+
+# VS Code
+chatApp/.vscode/
