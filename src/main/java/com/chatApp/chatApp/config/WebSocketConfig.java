@@ -29,8 +29,9 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer{
 	{
 		registry
 			.addEndpoint("/ws")
+			.setAllowedOriginPatterns("*")
 			.setHandshakeHandler(userHandShakeHandler)
-			.setAllowedOriginPatterns("*");
-//			.withSockJS();
+			.withSockJS();
+			
 	}
 }
