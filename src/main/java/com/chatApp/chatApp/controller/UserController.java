@@ -49,9 +49,13 @@ public class UserController {
 			userEntityDTO.setUserId(userId);
 			userEntityDTO.setPassword(null);
 			String token = jwtClass.getJWT(userId);
-			Cookie cookie = new Cookie("jwt" , token);
-	        cookie.setPath("/");                    // Cookie accessible across the app
-	        cookie.setMaxAge(60 * 60);              // 1 hour expiration
+			Cookie cookie = new Cookie("jwt", token);
+			cookie.setPath("/");                    
+			cookie.setMaxAge(60 * 60);  // 1 hour  
+			cookie.setHttpOnly(true);  // Prevent JavaScript access for security  
+			cookie.setSecure(true);  // Required for HTTPS  
+			cookie.setDomain("chat-app-spring-boot-7.onrender.com");  // Set your domain  
+			cookie.setAttribute("SameSite", "None");  // Needed for cross-site requests  
 	        
 	        servletResponse.addCookie(cookie);
 			ApiResponse<UserEntityDTO> response = new ApiResponse<UserEntityDTO>();
@@ -84,9 +88,13 @@ public class UserController {
 			long userId = userService.login(userEntityDTO);
 			System.out.println("this is the user Id :" + userId);
 			String token = jwtClass.getJWT(userId);
-			Cookie cookie = new Cookie("jwt" , token);
-	        cookie.setPath("/");                    // Cookie accessible across the app
-	        cookie.setMaxAge(60 * 60);              // 1 hour expiration
+			Cookie cookie = new Cookie("jwt", token);
+			cookie.setPath("/");                    
+			cookie.setMaxAge(60 * 60);  // 1 hour  
+			cookie.setHttpOnly(true);  // Prevent JavaScript access for security  
+			cookie.setSecure(true);  // Required for HTTPS  
+			cookie.setDomain("chat-app-spring-boot-7.onrender.com");  // Set your domain  
+			cookie.setAttribute("SameSite", "None");  // Needed for cross-site requests              // 1 hour expiration
 	        servletResponse.addCookie(cookie);
 			ApiResponse<UserEntityDTO> response = new ApiResponse<>();
 			response.setHttpStatusCode(HttpStatus.OK);
