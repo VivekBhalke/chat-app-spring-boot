@@ -40,10 +40,10 @@ public class RestConfig {
 	  private String HBM2DDL_AUTO;
 	  
 	  
-	   @Bean
-	    public Dotenv dotenv() {
-	        return Dotenv.load();  // Loads the .env file from the project root
-	    }
+//	   @Bean
+//	    public Dotenv dotenv() {
+//	        return Dotenv.load();  // Loads the .env file from the project root
+//	    }
 	  
 	  
 	  @Bean
