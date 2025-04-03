@@ -12,7 +12,7 @@ public class ChatAppApplication
 {
 	public static void main(String[] args) 
 	{
-		new EnvLoader();
+//		new EnvLoader();
 		SpringApplication.run(ChatAppApplication.class, args);
 	}
 
