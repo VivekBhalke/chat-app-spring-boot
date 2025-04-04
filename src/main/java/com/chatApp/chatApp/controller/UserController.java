@@ -54,7 +54,7 @@ public class UserController {
 			cookie.setMaxAge(60 * 60);  // 1 hour  
 			cookie.setHttpOnly(true);  // Prevent JavaScript access for security  
 			cookie.setSecure(true);  // Required for HTTPS  
-			cookie.setDomain("chat-app-spring-boot-7.onrender.com");  // Set your domain  
+			//cookie.setDomain("chat-app-spring-boot-7.onrender.com");  // Set your domain  
 			cookie.setAttribute("SameSite", "None");  // Needed for cross-site requests  
 	        
 	        servletResponse.addCookie(cookie);
@@ -93,7 +93,8 @@ public class UserController {
 			cookie.setMaxAge(60 * 60);  // 1 hour  
 			cookie.setHttpOnly(true);  // Prevent JavaScript access for security  
 			cookie.setSecure(true);  // Required for HTTPS  
-			cookie.setDomain("chat-app-spring-boot-7.onrender.com");  // Set your domain  
+			//cookie.setDomain("/");
+			//cookie.setDomain("chat-app-spring-boot-7.onrender.com");  // Set your domain  
 			cookie.setAttribute("SameSite", "None");  // Needed for cross-site requests              // 1 hour expiration
 	        servletResponse.addCookie(cookie);
 			ApiResponse<UserEntityDTO> response = new ApiResponse<>();

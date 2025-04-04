@@ -12,11 +12,12 @@ import jakarta.servlet.http.HttpServletRequest;
 public class CookieClass {
 	public static String extractTokenFromCookies(HttpServletRequest request) throws ApiException {
         // Logic to extract JWT from cookies
+		System.out.println("reached here for the token in the cookie class");
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if ("jwt".equals(cookie.getName())) {
-                    return cookie.getValue(); // return the JWT token
+                    return cookie.getValue();
                 }
             }
         }
